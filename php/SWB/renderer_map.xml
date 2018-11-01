@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item>
+    <path>/</path>
+    <class>SWB\swb_index_renderer</class>
+  </item>
+  <item>
+    <path>/page/</path>
+    <class>Me\page_index_renderer</class>
+  </item>
+  <item>
+    <path>/page/.*</path>
+    <class>Me\page_renderer</class>
+  </item>
+</root>
