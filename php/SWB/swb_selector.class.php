@@ -9,11 +9,13 @@ class swb_selector{
     public function __construct($dat){
 	$url_checker=$dat;
     }
-    public get_renderer(){
-	$rules=simplexml_load_file("renderer_map.xml");
-	foreach($rules->childeren() as $item){
-	    if($url_checker->url_regex($item->path)){
-		return new $item->class();
+    public function get_renderer(){
+	$rules=simplexml_load_file(SWB_ROOT."SWB/renderer_map.xml");
+	foreach($rules->children() as $item){
+	    $rule="[^".$item->path."$]";
+	    if($this->url_checker->url_regex($rule)){
+		$class=$item->class->__toString();
+		return new $class();
 	    }
 	}
     }

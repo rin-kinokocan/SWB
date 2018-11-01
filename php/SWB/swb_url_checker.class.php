@@ -12,7 +12,7 @@ class swb_url_checker{
 	$this->dat_parsed_url=explode('/',$this->dat_parsed_url);
     }
     public function url_regex($str){
-	return preg_match($str,$dat_url);
+	return preg_match_all($str,$this->dat_url);
     }
     public function get_parsed_url(){
 	return $this->dat_url;
