@@ -1,5 +1,5 @@
 <?php
-namespace Default;
+namespace WorkSpace;
 class index_renderer extends \SWB\swb_renderer{
     public function __construct($d,$t){
 	parent::__construct(

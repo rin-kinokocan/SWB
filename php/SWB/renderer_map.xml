@@ -2,10 +2,14 @@
 <root>
   <item>
     <path>/</path>
-    <class>Default\index_renderer</class>
+    <class>WorkSpace\index_renderer</class>
   </item>
   <item>
     <path>/page/*.*</path>
-    <class>Default\page_renderer</class>
+    <class>WorkSpace\page_renderer</class>
   </item>
+  <item>
+    <path>.*</path>
+    <class>WorkSpace\notfound_renderer</class>
+  </item>  
 </root>

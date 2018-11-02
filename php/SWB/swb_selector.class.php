@@ -7,7 +7,7 @@ namespace SWB;
 class swb_selector{
     protected $url_checker;//swb_url_regex
     public function __construct($dat){
-	$url_checker=$dat;
+	$this->url_checker=$dat;
     }
     public function get_renderer(){
 	$rules=simplexml_load_file(SWB_ROOT."SWB/renderer_map.xml");

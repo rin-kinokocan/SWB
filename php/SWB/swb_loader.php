@@ -5,7 +5,6 @@ namespace SWB;
    It starts session, registers autoload,
    makes some inportant functions available on inclusion.
  */
-include("swb_selector.php");
 include("swb_functions.php");
 define("SWB_ROOT",rtrim(__DIR__,' SWB'));// /php/
 session_start();
