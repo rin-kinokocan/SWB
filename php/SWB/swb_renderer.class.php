@@ -5,7 +5,7 @@ Base class for every renderer.
 Controller.
 */
 class swb_renderer{
-    protected $dat_description="This is webpage is powered by SWB.";
+    protected $dat_description="A website built with SWB.";
     protected $dat_title="default";
     protected function func_script(){}
     public function func_meta(){

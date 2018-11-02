@@ -2,14 +2,10 @@
 <root>
   <item>
     <path>/</path>
-    <class>SWB\swb_index_renderer</class>
+    <class>Default\index_renderer</class>
   </item>
   <item>
-    <path>/page/</path>
-    <class>Me\page_index_renderer</class>
-  </item>
-  <item>
-    <path>/page/.*</path>
-    <class>Me\page_renderer</class>
+    <path>/page/*.*</path>
+    <class>Default\page_renderer</class>
   </item>
 </root>
