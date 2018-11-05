@@ -5,17 +5,17 @@ $url_checker=new SWB\swb_url_checker();
 $selector=new SWB\swb_selector($url_checker);
 $renderer=$selector->get_renderer();
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-	<?php
-	$renderer->func_meta();
-	$renderer->func_custom_head();
+	<?php 
+	$renderer->print_head();
 	?>
     </head>
     <body>
 	<?php 
-	$renderer->func_body();
+	$renderer->print_body();
 	?>
     </body>
 </html>
+

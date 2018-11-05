@@ -1,25 +1,27 @@
 <?php
 namespace SWB;
 /*
-Base class for every renderer.
-Controller.
-*/
+   Base class for every renderer.
+   Controller.
+ */
 class swb_renderer{
-    protected $dat_description="A website built with SWB.";
-    protected $dat_title="default";
-    protected function func_script(){}
-    public function func_meta(){
-	swb_load_template("meta.php");
-	echo "<title>$this->dat_title</title>";
-	echo "<meta name='description' content=$this->dat_description>";
+    protected $cls_title_description;
+    protected function print_title_description(){
+	echo "<title>".$this->cls_title_description->get_title()."</title>";
+	echo '<meta name="description" content='.$this->cls_title_description->get_description().'>';
     }
-    public function func_custom_head(){}
-    public function func_body(){}
-    public function __construct($description='',$title=''){
-	if(!empty($description))
-	    $this->dat_description=$description;
-	if(!empty($title))
-	    $this->dat_title=$title;
+    public function print_head(){
+	//load head templates from this method.
+	$this->print_title_description();
+    }
+    public function print_body(){
+	//load body templates from this method.
+    }
+    public function __construct($meta=NULL){
+	if($meta === NULL)
+	    $this->cls_title_description=new swb_title_description();
+	else
+	    $this->cls_title_description=$meta;
     }
 }
 ?>

@@ -10,7 +10,7 @@ class swb_selector{
 	$this->url_checker=$dat;
     }
     public function get_renderer(){
-	$rules=simplexml_load_file(SWB_ROOT."SWB/renderer_map.xml");
+	$rules=simplexml_load_file(SWB_ROOT."renderer_map.xml");
 	foreach($rules->children() as $item){
 	    $rule="[^".$item->path."$]";
 	    if($this->url_checker->url_regex($rule)){

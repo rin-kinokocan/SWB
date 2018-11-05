@@ -1,6 +1,6 @@
 <?php
-namespace Default;
-class index_db extends page_base{
+namespace WorkSpace\DB;
+class index_db extends DB_connection{
     //You can use this class like this.
     /* public function get_what_new(){
        $str="SELECT * FROM changelog";
