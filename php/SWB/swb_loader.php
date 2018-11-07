@@ -8,15 +8,9 @@ namespace SWB;
 include("swb_functions.php");
 define("SWB_ROOT",rtrim(__DIR__,' SWB'));// /php/
 session_start();
-spl_autoload_register(function ($class){
+spl_autoload_extensions(".class.php");
+spl_autoload_register(function($class){
     $class=str_replace("\\","/",$class);
-    if(substr($class,0,4) === "SWB/"){
-	//if the class is a part of SWB
-	include SWB_ROOT. $class . '.class.php';
-    }
-    else{
-	//otherwise
-	include SWB_ROOT. "Plugin/" . $class . '.class.php';
-    }
+    include SWB_ROOT. $class . '.class.php';
 });
 ?>
