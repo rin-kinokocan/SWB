@@ -5,15 +5,12 @@ namespace SWB;
    Model?
  */
 class swb_selector{
-    protected $url_checker;//swb_url_regex
-    public function __construct($dat){
-	$this->url_checker=$dat;
-    }
     public function get_renderer(){
 	$rules=simplexml_load_file(SWB_ROOT."renderer_map.xml");
+	$url_checker=new \SWB\swb_url_checker();
 	foreach($rules->children() as $item){
 	    $rule="[^".$item->path."$]";
-	    if($this->url_checker->url_regex($rule)){
+	    if($url_checker->url_regex($rule)){
 		$class=$item->class->__toString();
 		return new $class();
 	    }
